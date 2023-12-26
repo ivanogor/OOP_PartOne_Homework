@@ -56,19 +56,18 @@ public class Slytherin extends Hogwarts{
 
     @Override
     public String toString() {
-        return "Имя студента - " + name + ". \nСила магии - " + powerOfWitchcraft + ". \nРасстояние трансгрессии - " + teleportDistance +
-                ". \nХитрость - " + cunning + ". \nРешительность - " + determination + ". \nАмбициозность - " + ambition + ". \n" +
+        return super.toString() + "Хитрость - " + cunning + ". \nРешительность - " + determination + ". \nАмбициозность - " + ambition + ". \n" +
                 "Находчивость - " + resourcefulness + ". \nЖажда власти - " + lustForPower + ". \n";
     }
 
-    public static void compareTwoStudents(Slytherin firstStudent, Slytherin secondStudent){
-        int sumOfFirstStudent = firstStudent.getCunning() + firstStudent.getDetermination() + firstStudent.getAmbition() +
-                firstStudent.getResourcefulness() + firstStudent.getLustForPower();
-        int sumOfSecondStudent = secondStudent.getCunning() + secondStudent.getDetermination() + secondStudent.getAmbition() +
-                secondStudent.getResourcefulness() + secondStudent.getLustForPower();
+    public void compareTo(Slytherin anotherStudent){
+        int sumOfFirstStudent = this.getCunning() + this.getDetermination() + this.getAmbition() +
+                this.getResourcefulness() + this.getLustForPower();
+        int sumOfSecondStudent = anotherStudent.getCunning() + anotherStudent.getDetermination() + anotherStudent.getAmbition() +
+                anotherStudent.getResourcefulness() + anotherStudent.getLustForPower();
 
-        String result = sumOfFirstStudent > sumOfSecondStudent ? firstStudent.getName() + " лучший слизеринец, чем " + secondStudent.getName() + ". "
-                : secondStudent.getName() + " лучший слизеринец, чем " + firstStudent.getName() + ". ";
+        String result = sumOfFirstStudent > sumOfSecondStudent ? this.getName() + " лучший слизеринец, чем " + anotherStudent.getName() + ". "
+                : anotherStudent.getName() + " лучший слизеринец, чем " + this.getName() + ". ";
 
         System.out.println(result);
     }

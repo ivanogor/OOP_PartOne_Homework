@@ -46,17 +46,16 @@ public class Ravenclaw extends Hogwarts{
 
     @Override
     public String toString() {
-        return "Имя студента - " + name + ". \nСила магии - " + powerOfWitchcraft + ". \nРасстояние трансгрессии - " + teleportDistance +
-                ". \nУм - " + smart + ". \nМудрость - " + wise + ". \nОстроумие - " + witty + ". \nКреативность - " + creative + ". \n";
+        return super.toString() + "Ум - " + smart + ". \nМудрость - " + wise + ". \nОстроумие - " + witty + ". \nКреативность - " + creative + ". \n";
     }
 
-    public static void compareTwoStudents(Ravenclaw firstStudent, Ravenclaw secondStudent){
-        int sumOfFirstStudent = firstStudent.getSmart() + firstStudent.getWise() + firstStudent.getWitty() + firstStudent.getCreative();
-        int sumOfSecondStudent = secondStudent.getSmart() + secondStudent.getWise() + secondStudent.getWitty() + secondStudent.getCreative();
+    public void compareTo(Ravenclaw anotherStudent){
+        int sumOfFirstStudent = this.getSmart() + this.getWise() + this.getWitty() + this.getCreative();
+        int sumOfSecondStudent = anotherStudent.getSmart() + anotherStudent.getWise() + anotherStudent.getWitty() + anotherStudent.getCreative();
 
-        String result = sumOfFirstStudent > sumOfSecondStudent ? firstStudent.getName() + " лучший когтевранец, чем " +
-                secondStudent.getName() + ". "
-                : secondStudent.getName() + " лучший когтевранец, чем " + firstStudent.getName() + ". ";
+        String result = sumOfFirstStudent > sumOfSecondStudent ? this.getName() + " лучший когтевранец, чем " +
+                anotherStudent.getName() + ". "
+                : anotherStudent.getName() + " лучший когтевранец, чем " + this.getName() + ". ";
 
         System.out.println(result);
     }

@@ -33,13 +33,20 @@ abstract public class Hogwarts {
         this.name = name;
     }
 
-    public static void compareTwoStudents(Hogwarts firstStudent, Hogwarts secondStudent){
-        int sumOfFirstStudent = firstStudent.getPowerOfWitchcraft() + firstStudent.getTeleportDistance();
-        int sumOfSecondStudent = secondStudent.getPowerOfWitchcraft() + secondStudent.getTeleportDistance();
+    @Override
+    public String toString() {
+        return "Имя студента - " + name + ". \nСила магии - " + powerOfWitchcraft + ". \nРасстояние трансгрессии - " + teleportDistance + ". \n";
+    }
 
-        String result = sumOfFirstStudent > sumOfSecondStudent ? firstStudent.getName() + " обладает бОльшей мощностью магии, чем " + secondStudent.getName() + ". "
-                : secondStudent.getName() + " обладает бОльшей мощностью магии, чем " + firstStudent.getName() + ". ";
+    public void compareTo(Hogwarts anotherStudent){
+        int sumOfFirstStudent = this.getPowerOfWitchcraft() + this.getTeleportDistance();
+        int sumOfSecondStudent = anotherStudent.getPowerOfWitchcraft() + anotherStudent.getTeleportDistance();
+
+        String result = sumOfFirstStudent > sumOfSecondStudent ? this.getName() + " обладает бОльшей мощностью магии, чем " +
+                anotherStudent.getName() + ". "
+                : anotherStudent.getName() + " обладает бОльшей мощностью магии, чем " + this.getName() + ". ";
 
         System.out.println(result);
     }
+
 }

@@ -36,16 +36,15 @@ public class Gryffindor extends Hogwarts{
 
     @Override
     public String toString() {
-        return "Имя студента - " + name + ". \nСила магии - " + powerOfWitchcraft + ". \nРасстояние трансгрессии - " + teleportDistance +
-                ". \nБлагородств - " + nobility + ". \nЧесть - " + honor + ". \nХрабрость - " + bravery + ". \n";
+        return super.toString() + "Благородств - " + nobility + ". \nЧесть - " + honor + ". \nХрабрость - " + bravery + ". \n";
     }
 
-    public static void compareTwoStudents(Gryffindor firstStudent, Gryffindor secondStudent){
-        int sumOfFirstStudent = firstStudent.getBravery() + firstStudent.getHonor() + firstStudent.getNobility();
-        int sumOfSecondStudent = secondStudent.getBravery() + secondStudent.getHonor() + secondStudent.getNobility();
+    public void compareTo(Gryffindor anotherStudent){
+        int sumOfFirstStudent = this.getBravery() + this.getHonor() + this.getNobility();
+        int sumOfSecondStudent = anotherStudent.getBravery() + anotherStudent.getHonor() + anotherStudent.getNobility();
 
-        String result = sumOfFirstStudent > sumOfSecondStudent ? firstStudent.getName() + " лучший гриффиндорец, чем " + secondStudent.getName() + ". "
-                : secondStudent.getName() + " лучший гриффиндорец, чем " + firstStudent.getName() + ". ";
+        String result = sumOfFirstStudent > sumOfSecondStudent ? this.getName() + " лучший гриффиндорец, чем " + anotherStudent.getName() + ". "
+                : anotherStudent.getName() + " лучший гриффиндорец, чем " + this.getName() + ". ";
 
         System.out.println(result);
     }

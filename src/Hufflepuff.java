@@ -36,17 +36,15 @@ public class Hufflepuff extends Hogwarts{
 
     @Override
     public String toString() {
-        return "Имя студента - " + name + ". \nСила магии - " + powerOfWitchcraft +
-        ". \nРасстояние трансгрессии - " + teleportDistance + ". \nТрудолюбивость - " + hardworking + ". \nВерность - " + loyal +
+        return super.toString() + "Трудолюбивость - " + hardworking + ". \nВерность - " + loyal +
         ". \nЧестность - " + honest + ". \n";
     }
+    public void compareTo(Hufflepuff anotherStudent){
+        int sumOfFirstStudent = this.getHardworking() + this.getLoyal() + this.getHonest();
+        int sumOfSecondStudent = anotherStudent.getHardworking() + anotherStudent.getLoyal() + anotherStudent.getHonest();
 
-    public static void compareTwoStudents(Hufflepuff firstStudent, Hufflepuff secondStudent){
-        int sumOfFirstStudent = firstStudent.getHardworking() + firstStudent.getLoyal() + firstStudent.getHonest();
-        int sumOfSecondStudent = secondStudent.getHardworking() + secondStudent.getLoyal() + secondStudent.getHonest();
-
-        String result = sumOfFirstStudent > sumOfSecondStudent ? firstStudent.getName() + " лучший пуффендуец, чем " + secondStudent.getName() + ". "
-                : secondStudent.getName() + " лучший пуффендуец, чем " + firstStudent.getName() + ". ";
+        String result = sumOfFirstStudent > sumOfSecondStudent ? this.getName() + " лучший пуффендуец, чем "  + anotherStudent.getName() + ". "
+                : anotherStudent.getName() + " лучший пуффендуец, чем " + this.getName() + ". ";
 
         System.out.println(result);
     }

@@ -18,11 +18,12 @@ public class Main {
 
         System.out.println(harryPotter);
 
-        Gryffindor.compareTwoStudents(harryPotter, hermioneGranger);
-        Slytherin.compareTwoStudents(dracoMalfoy, grahamMontague);
-        Hufflepuff.compareTwoStudents(zachariahSmith, cedricDiggory);
-        Ravenclaw.compareTwoStudents(zhouChang,padmaPatil);
+        hermioneGranger.compareTo(ronWeasley);
+        dracoMalfoy.compareTo(grahamMontague);
+        zachariahSmith.compareTo(cedricDiggory);
+        zhouChang.compareTo(padmaPatil);
 
-        Hogwarts.compareTwoStudents(marcusBelby,justinFinchFletchley);
+        harryPotter.compareTo(marcusBelby);
+        marcusBelby.compareTo(harryPotter);
     }
 }
