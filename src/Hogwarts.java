@@ -1,7 +1,7 @@
 abstract public class Hogwarts {
-    protected String name;
-    protected int powerOfWitchcraft;
-    protected int teleportDistance;
+    private String name;
+    private int powerOfWitchcraft;
+    private int teleportDistance;
 
     public Hogwarts(String name, int powerOfWitchcraft, int teleportDistance) {
         this.name = name;
